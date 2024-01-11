@@ -1,7 +1,6 @@
 import './App.css'
 import React from 'react'
-import { AboutMe } from './components/AboutMe'
-import A from './components/AboutMe'
+import { Header } from './components/Header'
 // Компонент это функция JS кот возвращает
 // ОДИН ТЕГ HTML
 // все теги обернуты в одного родителя
@@ -16,15 +15,7 @@ export const App = () => {
       <div className="App">Hello world</div>
       <h1>My name is Vlad</h1>
 
-      <AboutMe />
-
       <Header />
-      <Banner />
-      <Main />
-
-      <AboutMe />
-
-      <A />
     </>
   )
 }
