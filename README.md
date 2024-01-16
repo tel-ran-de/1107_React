@@ -17,3 +17,17 @@
 
 // если один только экспорт из файла - дефолтный
 // несколько - именнованные
+
+// компоненты между собой передают информацию в пропсах
+// properties - какие-то свойства
+// props это объект
+
+// const title = props.title
+// const description = props.description
+// const { title, description } = props
+
+Создать компонент Todo.
+Внутри него должны быть переменные taskTitle, taskDescripttion, doneFlg
+со значениями заголовка дела, описания и булевого значения сделано дело или нет. Отобразите taskTitle и taskDescripttion
+и если doneFlg равно true, то заголовок и текст должны стать серого цвета и быть зачеркнутыми.
+textDecoration: 'line-through'
