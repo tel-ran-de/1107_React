@@ -11,12 +11,12 @@ const quotes = [
   },
   {
     id: 3,
-    text: 'Your time is limited, don\'t waste it living someone else\'s life.',
+    text: "Your time is limited, don't waste it living someone else's life.",
     author: 'Steve Jobs',
   },
   {
     id: 4,
-    text: 'In three words I can sum up everything I\'ve learned about life: it goes on.',
+    text: "In three words I can sum up everything I've learned about life: it goes on.",
     author: 'Robert Frost',
   },
   {
@@ -41,7 +41,7 @@ const quotes = [
   },
   {
     id: 9,
-    text: 'Don\'t watch the clock; do what it does. Keep going.',
+    text: "Don't watch the clock; do what it does. Keep going.",
     author: 'Sam Levenson',
   },
   {
@@ -49,4 +49,4 @@ const quotes = [
     text: 'The best way to predict the future is to create it.',
     author: 'Peter Drucker',
   },
-];
+]
