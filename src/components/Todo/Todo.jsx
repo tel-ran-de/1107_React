@@ -1,5 +1,5 @@
 //taskTitle и taskDescripttion и  doneFlg
-const Todo = ({ taskTitle, taskDescription, doneFlag }) => {
+const Todo = ({ taskTitle, taskDescription, doneFlag, id, handleChange }) => {
   return (
     <div
       style={{
@@ -9,6 +9,7 @@ const Todo = ({ taskTitle, taskDescription, doneFlag }) => {
     >
       <h1>{taskTitle}</h1>
       <p>{taskDescription}</p>
+      <button onClick={() => handleChange(id)}>Done</button>
     </div>
   )
 }

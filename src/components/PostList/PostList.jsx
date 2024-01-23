@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { posts } from '../../utils/posts'
+import AddNewPost from '../AddNewPost/AddNewPost'
 import Post from '../Post/Post'
 
 function PostList() {
@@ -11,18 +12,15 @@ function PostList() {
     })
 
     setPostList(newPostList)
-    // новая переменная  newPostList
-    // пройтись по массиву объектов postList --> map (возвращает новый массив)
-    // используем тернарный оператор
-    // если id елемента совпадает с id (передается в функцию)
-    // то свойство marked поменяй на противоположное
-    // {...post, marked: !post.marked}
-    // если не совпадают верни тот же объект
-    // в setPostList мы добавляем новый массив т.е. изменяем состояние
+  }
+
+  const handleAddPost = (post) => {
+    setPostList([...postList, post])
   }
 
   return (
     <div>
+      <AddNewPost handleAddPost={handleAddPost} />
       {postList.map((post) => (
         <Post key={post.id} {...post} changedMarked={changedMarked} />
       ))}

@@ -1,19 +1,21 @@
+import { useState } from 'react'
 import { todos } from '../../utils/todos'
 import Todo from '../Todo/Todo'
 
 function TodoList() {
-  // создаем useState
-  // заносим todo из внешнего файла в состояние todoList
-  // в компоненте TODO добавляем кнопку
-  // изменяет переменную doneFlag
-  // прокидываем в функцию changeDoneFlag id
-  // добавляем id и changeDoneFlag  в пропсы
-  // функцию прокидываем в пропсы в компоненте Todo
-  // реализовываем функцию, кот изменяет doneFlag
+  const [todoList, setTodoList] = useState(todos)
+
+  const handleChange = (id) => {
+    const newTodos = todoList.map((todo) =>
+      todo.id === id ? { ...todo, doneFlag: !todo.doneFlag } : todo
+    )
+    setTodoList(newTodos)
+  }
+
   return (
     <div>
-      {todos.map((todo) => (
-        <Todo key={todo.id} {...todo} />
+      {todoList.map((todo) => (
+        <Todo key={todo.id} {...todo} handleChange={handleChange} />
       ))}
     </div>
   )
