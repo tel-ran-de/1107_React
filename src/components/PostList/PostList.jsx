@@ -6,9 +6,9 @@ function PostList() {
   const [postList, setPostList] = useState(posts)
 
   const changedMarked = (id) => {
-    const newPostList = postList.map((post) =>
-      post.id === id ? { ...post, marked: !post.marked } : post
-    )
+    const newPostList = postList.map(function (post) {
+      return post.id === id ? { ...post, marked: !post.marked } : post
+    })
 
     setPostList(newPostList)
     // новая переменная  newPostList
