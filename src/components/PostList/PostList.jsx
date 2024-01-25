@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { posts } from '../../utils/posts'
 import AddNewPost from '../AddNewPost/AddNewPost'
 import Post from '../Post/Post'
 
 function PostList() {
-  const [postList, setPostList] = useState(posts)
+  const [postList, setPostList] = useState(JSON.parse(localStorage.getItem('posts')) ?? posts)
+  // false, 0, пустую строку "" || три переменные не пропустит
+  // ?? не пропустит null, undefined
+  useEffect(() => {
+    localStorage.setItem('posts', JSON.stringify(postList))
+  }, [postList])
 
   const changedMarked = (id) => {
     const newPostList = postList.map(function (post) {

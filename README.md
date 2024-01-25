@@ -127,3 +127,32 @@ return <div>{color}</div>
 // поменять useState как в массиве todo
 // добавить обработчик события на submit
 // реализовать в todolist добавление в массив данных
+
+// используются внутри ФУНКЦИОНАЛЬНОГО компонента
+// используются на верхнем уровне
+// не используется внутри циклов, условных операторов и тд.
+// все хуки нач с use
+
+// useEffect() - два параметра
+// первый параметр - колбек функция
+// второй параметр - массив зависимостей
+
+// если НЕТ массива зависимостей([] второй параметр)
+// то useEffect отрабатывает на КАЖДОМ рендере комопнента
+useEffect(() => console.log('I AM EVERY RENDER'))
+// Если второй аргумент ПУСТОЙ массив, то отрабатывает один раз на поднятии компонента
+useEffect(() => console.log('I AM ON MOUNT'), [])
+useEffect(() => console.log(`I only change with ${color}`), [color])
+
+useEffect(() => console.log('I AM EVERY RENDER'))
+useEffect(() => console.log('I AM ON MOUNT'), [])
+useEffect(() => console.log(`I only change with ${color}`), [color])
+useEffect(() => console.log(`I only change with ${count}`), [count])
+useEffect(() => console.log(`I only change with ${count} and ${color}`), [count, color])
+
+// useEffect, переменная в массиве зависимостей postList
+// JSON.stringify() - переводи в JSON
+// JSON.parse() - из json обратно в массив
+// при инициализации добавить с state
+// если LS пустой то занести posts из массива ??
+// если null/undefined то примени это --> ??
