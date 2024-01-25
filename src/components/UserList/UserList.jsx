@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { fetchUsers } from '../../utils/requests'
+import { fetchSingleUser, fetchUsers } from '../../utils/requests'
 
 const UserList = () => {
   const [userList, setUserList] = useState([])
 
   useEffect(() => {
     fetchUsers(setUserList)
+    fetchSingleUser(1, setUserList)
   }, [])
 
   console.log(userList)

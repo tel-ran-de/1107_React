@@ -16,9 +16,14 @@ export const fetchUsers = async (setUserList) => {
 
 // написать функци по аналогии с предыдущей
 // принимает параметр id
-fetch('https://dummyjson.com/users/1')
-  .then((res) => res.json())
-  .then(console.log)
+// fucntion expression
+export const fetchSingleUser = async (id, setUser) => {
+  const response = await fetch(`https://dummyjson.com/users/${id}`)
+  const data = await response.json()
+  console.log(data)
+  setUser(data)
+}
+
 // написать компонент SingleUser
 // в нем через useEffect вызвать функцию данные присвоить в состояние
 // и отрисовать на странице
