@@ -1,14 +1,6 @@
-import { useEffect, useState } from 'react'
-import { fetchUsers } from '../../utils/requests'
 import './userList.module.css'
 
-const UserList = () => {
-  const [userList, setUserList] = useState([])
-
-  useEffect(() => {
-    fetchUsers(setUserList)
-  }, [])
-
+const UserList = ({ userList }) => {
   return (
     <div>
       {userList.map((el) => (
