@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import AddUser from '../components/AddUser/AddUser'
 import UserList from '../components/UserList/UserList'
-import { fetchUsers } from '../utils/requests'
+import { addUser, fetchUsers } from '../utils/requests'
 
 const UsersPage = () => {
   const [userList, setUserList] = useState([])
@@ -9,9 +9,15 @@ const UsersPage = () => {
   useEffect(() => {
     fetchUsers(setUserList)
   }, [])
+
+  const handleAddUser = async (newUser) => {
+    const userResponse = await addUser(newUser)
+    setUserList([...userList, userResponse])
+  }
+
   return (
     <main>
-      <AddUser />
+      <AddUser handleAddUser={handleAddUser} />
       <UserList userList={userList} />
     </main>
   )

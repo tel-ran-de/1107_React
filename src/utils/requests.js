@@ -28,7 +28,6 @@ export const addUser = async (newUser) => {
     })
     if (!response.ok) throw new Error('не получилось добавить пользователя')
     const data = await response.json()
-    console.log(data)
     return data
   } catch (error) {
     console.log(error)
