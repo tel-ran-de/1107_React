@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchSingleUser } from '../../utils/requests'
 
-const UserList = () => {
-  const [user, setUser] = useState([])
+const User = () => {
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     fetchSingleUser(1, setUser)
@@ -11,4 +11,4 @@ const UserList = () => {
   return <div>{user.firstName}</div>
 }
 
-export default UserList
+export default User

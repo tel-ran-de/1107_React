@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
-import { fetchSingleUser, fetchUsers } from '../../utils/requests'
+import { fetchUsers } from '../../utils/requests'
+import './userList.module.css'
 
 const UserList = () => {
   const [userList, setUserList] = useState([])
 
   useEffect(() => {
     fetchUsers(setUserList)
-    fetchSingleUser(1, setUserList)
   }, [])
 
-  console.log(userList)
   return (
     <div>
       {userList.map((el) => (

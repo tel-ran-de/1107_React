@@ -1,8 +1,3 @@
-// создаем асинхронную функцию fetchUsers
-// async await
-// возвращает ответ от сервера
-// try catch для обработки ошибок
-// экспортировать
 export const fetchUsers = async (setUserList) => {
   try {
     const response = await fetch('https://dummyjson.com/users')
@@ -14,9 +9,6 @@ export const fetchUsers = async (setUserList) => {
   }
 }
 
-// написать функци по аналогии с предыдущей
-// принимает параметр id
-// fucntion expression
 export const fetchSingleUser = async (id, setUser) => {
   const response = await fetch(`https://dummyjson.com/users/${id}`)
   const data = await response.json()
@@ -24,6 +16,21 @@ export const fetchSingleUser = async (id, setUser) => {
   setUser(data)
 }
 
-// написать компонент SingleUser
-// в нем через useEffect вызвать функцию данные присвоить в состояние
-// и отрисовать на странице
+// export async await
+// body передаем объект - параметр функции
+// результат/ответ вывводим в консоль
+export const addUser = async (newUser) => {
+  try {
+    const response = await fetch('https://dummyjson.com/users/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newUser),
+    })
+    if (!response.ok) throw new Error('не получилось добавить пользователя')
+    const data = await response.json()
+    console.log(data)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
