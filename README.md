@@ -191,3 +191,30 @@ https://www.figma.com/file/7bmKyuBgUDx5hdJjaKLMQI/Weather-Web-Design-%7C-App-UI-
 
 // useContext - rounter + userForm // управление сайтом в зависимости от роли
 // пользователь /админ
+
+const user1 = {
+name: 'peter',
+adress: 'Stockgolm',
+}
+
+const user2 = {
+name: 'Michelle',
+adress: undefined,
+}
+console.log(user2?.adress)
+const userArray = [user1, user2]
+userArray()
+
+ <p>{errors.firstName?.message}</p>
+ // если ошибки нет то first не существует
+ // пытаемся получить message у undefined
+ // он выбрасывает ошибку
+
+// если есть опертор опциального слияния
+// если firstName нет, то тогда ошибки не будет
+
+// если firstName есть то мы получаем у него значение message
+
+// создать новое поле с возрастом age
+// добавить в него валидацию если возраст меньше 18
+// выводим на экран ошибку - пользовательдолжен быть старше 18
