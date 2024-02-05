@@ -1,10 +1,12 @@
 import React from 'react'
 import './App.css'
+import PostsPage from './pages/PostsPage'
 import UsersPage from './pages/UsersPage'
 
 export const App = () => {
   return (
     <>
+      <PostsPage />
       <UsersPage />
     </>
   )
