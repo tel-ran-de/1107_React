@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage'
 import MainPage from './pages/MainPage'
 import PostsPage from './pages/PostsPage'
+import SingleUserPage from './pages/SingleUserPage'
 import UsersPage from './pages/UsersPage'
 
 // RouterProvider - специальный компонент,
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/users',
         element: <UsersPage />,
+      },
+      {
+        path: '/users/:id',
+        element: <SingleUserPage />,
       },
       {
         path: '/posts',

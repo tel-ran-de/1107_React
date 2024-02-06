@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import './userList.module.css'
 
@@ -5,7 +6,9 @@ const UserList = ({ userList }) => {
   return (
     <div>
       {userList.map((el) => (
-        <h1 key={uuidv4()}>{el.firstName}</h1>
+        <Link to={`/users/${el.id}`} state={{ firstName: el.firstName }} key={uuidv4()}>
+          <h1>{el.firstName}</h1>
+        </Link>
       ))}
     </div>
   )

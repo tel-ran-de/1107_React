@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import classes from './Header.module.css'
 
 const Header = () => {
   return (
@@ -6,13 +7,38 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="#6">6</NavLink>
           </li>
           <li>
-            <NavLink to="/posts">Posts</NavLink>
+            <NavLink
+              to="/"
+              className={(state) => {
+                console.log(state)
+                return state.isPending ? classes.pending : state.isActive ? classes.active : ''
+              }}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/users">Users</NavLink>
+            <NavLink
+              to="/posts"
+              className={({ isActive, isPending }) =>
+                isPending ? 'pending' : isActive ? classes.active : ''
+              }
+            >
+              Posts
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/users"
+              className={({ isActive, isPending }) =>
+                isPending ? 'pending' : isActive ? classes.active : ''
+              }
+            >
+              Users
+            </NavLink>
           </li>
         </ul>
       </nav>

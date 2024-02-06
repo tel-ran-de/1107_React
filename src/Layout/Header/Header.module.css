@@ -1,0 +1,11 @@
+ul {
+  display: flex;
+  gap: 25px;
+  background: rgb(215, 208, 208);
+}
+
+.active {
+  color: rgb(119, 111, 177);
+  font-size: 20px;
+  font-weight: 700;
+}
