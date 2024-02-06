@@ -5,8 +5,7 @@ import { posts } from '../utils/posts'
 
 const PostsPage = () => {
   const [postList, setPostList] = useState(JSON.parse(localStorage.getItem('posts')) ?? posts)
-  // false, 0, пустую строку "" || три переменные не пропустит
-  // ?? не пропустит null, undefined
+
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(postList))
   }, [postList])

@@ -1,18 +1,13 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import PostsPage from './pages/PostsPage'
-import UsersPage from './pages/UsersPage'
+import Header from './Layout/Header/Header'
 
 export const App = () => {
   return (
     <>
-      <PostsPage />
-      <UsersPage />
+      <Header />
+      <Outlet />
     </>
   )
 }
-
-// дефолтный импорт/экспорт
-// дефолтный экспорт - СКОБКИ ПРИ ИМПОРТЕ НУЖНЫ
-// если обычный то скобки нужны
-// опечатка
