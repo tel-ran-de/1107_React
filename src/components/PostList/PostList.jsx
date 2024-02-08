@@ -4,7 +4,6 @@ import Post from '../Post/Post'
 
 function PostList({ changedMarked }) {
   const { postList } = useContext(PostsContext)
-  console.log(postList)
 
   return (
     <div>

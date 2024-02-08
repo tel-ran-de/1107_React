@@ -15,16 +15,20 @@ const PostsPage = () => {
     const newPostList = postList.map(function (post) {
       return post.id === id ? { ...post, marked: !post.marked } : post
     })
-
     setPostList(newPostList)
   }
 
   const handleAddPost = (post) => {
     setPostList([...postList, post])
   }
+
+  const handleDeletePost = (id) => {
+    setPostList((prevList) => prevList.filter((el) => el.id !== id))
+  }
+
   return (
     <main>
-      <PostsContext.Provider value={{ postList, handleAddPost, changedMarked }}>
+      <PostsContext.Provider value={{ postList, handleAddPost, changedMarked, handleDeletePost }}>
         <AddNewPost />
         <PostList />
       </PostsContext.Provider>
@@ -34,3 +38,10 @@ const PostsPage = () => {
 // hadleAddPost перенести из пропса в контекст и использовать в ребенке через useContext
 // в компоненте addNewPost удалить  handleAddPost и получить ее из контекста
 export default PostsPage
+
+// создать фукнцию кот. удаляет пост при нажатии на кнопку handleDeletePost
+// 1. Создаем функцию удаления в PostPge
+// filter по id el.id !== id
+// 2. Передаем ее в провайдер
+// 3. в Компоненте POst испоритурем нашу функцию через useContext
+// 4. Создаем кнопку при нажатии удаляет наш пост

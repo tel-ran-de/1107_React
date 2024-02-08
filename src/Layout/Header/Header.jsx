@@ -1,9 +1,28 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { ThemeContext } from '../../contexts'
 import classes from './Header.module.css'
 
 const Header = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext)
+  console.log(theme)
   return (
-    <header>
+    <header
+      // className={theme === 'dark' ? classes.dark : ''}
+      style={{
+        color: theme === 'dark' ? '#ffffff' : '#000000',
+        background: theme === 'dark' ? '#3c3a3a' : '#ffffff',
+      }}
+    >
+      <button
+        onClick={toggleTheme}
+        style={{
+          color: theme === 'dark' ? '#ffffff' : '#000000',
+          background: theme === 'dark' ? '#363232' : '#ffffff',
+        }}
+      >
+        Change Theme
+      </button>
       <nav>
         <ul>
           <li>
@@ -13,7 +32,6 @@ const Header = () => {
             <NavLink
               to="/"
               className={(state) => {
-                console.log(state)
                 return state.isPending ? classes.pending : state.isActive ? classes.active : ''
               }}
             >

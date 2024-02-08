@@ -5,6 +5,7 @@ import { PostsContext } from '../../contexts'
 const AddNewPost = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
+  // импорт функции
   const { handleAddPost } = useContext(PostsContext)
   // создать стейт для text
   // при вводе в инпут заносить в переменную состояния
@@ -18,6 +19,7 @@ const AddNewPost = () => {
       img: 'https://placehold.co/200x200/orange/white',
       marked: false,
     }
+    // вызываем
     handleAddPost(newPost)
     setTitle('')
     setText('')
