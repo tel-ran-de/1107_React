@@ -24,12 +24,13 @@ const PostsPage = () => {
   }
   return (
     <main>
-      <PostsContext.Provider value={{ postList, changedMarked }}>
-        <AddNewPost handleAddPost={handleAddPost} />
+      <PostsContext.Provider value={{ postList, handleAddPost, changedMarked }}>
+        <AddNewPost />
         <PostList />
       </PostsContext.Provider>
     </main>
   )
 }
-
+// hadleAddPost перенести из пропса в контекст и использовать в ребенке через useContext
+// в компоненте addNewPost удалить  handleAddPost и получить ее из контекста
 export default PostsPage

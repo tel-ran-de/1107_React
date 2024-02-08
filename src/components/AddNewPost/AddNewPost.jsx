@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { PostsContext } from '../../contexts'
 
-const AddNewPost = ({ handleAddPost }) => {
+const AddNewPost = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
+  const { handleAddPost } = useContext(PostsContext)
   // создать стейт для text
   // при вводе в инпут заносить в переменную состояния
   const handleSubmit = (event) => {
