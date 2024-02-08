@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import AddNewPost from '../components/AddNewPost/AddNewPost'
 import PostList from '../components/PostList/PostList'
+import { PostsContext } from '../contexts'
 import { posts } from '../utils/posts'
 
 const PostsPage = () => {
@@ -23,8 +24,10 @@ const PostsPage = () => {
   }
   return (
     <main>
-      <AddNewPost handleAddPost={handleAddPost} />
-      <PostList postList={postList} changedMarked={changedMarked} />
+      <PostsContext.Provider value={{ postList, changedMarked }}>
+        <AddNewPost handleAddPost={handleAddPost} />
+        <PostList />
+      </PostsContext.Provider>
     </main>
   )
 }

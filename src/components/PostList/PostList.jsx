@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import { PostsContext } from '../../contexts'
 import Post from '../Post/Post'
 
-function PostList({ postList, changedMarked }) {
+function PostList({ changedMarked }) {
+  const { postList } = useContext(PostsContext)
   console.log(postList)
+
   return (
     <div>
       {postList &&

@@ -1,4 +1,8 @@
-const Post = ({ title, text, img, marked, id, changedMarked }) => {
+import { useContext } from 'react'
+import { PostsContext } from '../../contexts'
+
+const Post = ({ title, text, img, marked, id }) => {
+  const { changedMarked } = useContext(PostsContext)
   return (
     <div id={id} style={{ background: marked ? 'rgb(238, 209, 209)' : '' }}>
       <h1>{title}</h1>
