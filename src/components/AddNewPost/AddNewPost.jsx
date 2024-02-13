@@ -5,10 +5,9 @@ import { PostsContext } from '../../contexts'
 const AddNewPost = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
-  // импорт функции
+
   const { handleAddPost } = useContext(PostsContext)
-  // создать стейт для text
-  // при вводе в инпут заносить в переменную состояния
+ 
   const handleSubmit = (event) => {
     event.preventDefault()
     // сформировать объект из 4 полей title, text, id, marked, false
