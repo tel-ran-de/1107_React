@@ -229,3 +229,48 @@ const [value, setValue] = useState()
 // Глобальное состояние - REDUX
 // мы можем в хранилище все изменения на проекте
 // boilerplate (заготовка)- надо написать много кода, чтобы все это заработала
+
+function reducer(state, action) {
+if (action.type === 'INCREASE') {
+return {
+...state,
+counter: (state.counter += 1),
+}
+} else if (action.type === 'DECREASE') {
+return {
+...state,
+counter: (state.counter -= 1),
+}
+} else if ('third condition') {
+} else {
+return state
+}
+}
+
+// ВСЕГДА ВОВЗРАЩАЕТ СОСТОЯНИЕ
+export const counterReducer = (state = initialState, action) => {
+// if else ternary switch - выполняют одни и те же функции
+// switch помогает улучшить читаемость
+// проще понять, что в свитче, когда у нас много условий
+// action.type
+// {type: "INCREASE"}
+// когда мы отправляем в reducer наш action
+// у action всегда есть тип, поэтому мы смотрим на тип
+// в зависимости от этого типа мы изменяем наше состояние
+switch (action.type) {
+// action.type === "INCREASE" = case "INCREASE"
+case 'INCREASE':
+return {
+...state,
+counter: (state.counter += 1),
+}
+default:
+return state
+}
+}
+
+const counter = {
+counter: 1,
+}
+
+{...counter, counter: counter.counter+=1 }
