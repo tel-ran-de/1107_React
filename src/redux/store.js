@@ -11,3 +11,4 @@ const reducer = combineReducers({
 })
 
 export const store = createStore(reducer, composeWithDevTools())
+//npm i @redux-devtools/extension
