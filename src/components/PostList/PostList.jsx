@@ -1,16 +1,9 @@
-import { useContext } from 'react'
-import { PostsContext } from '../../contexts'
+import { useSelector } from 'react-redux'
 import Post from '../Post/Post'
 
-function PostList({ changedMarked }) {
-  const { postList } = useContext(PostsContext)
-
-  return (
-    <div>
-      {postList &&
-        postList.map((post) => <Post key={post.id} {...post} changedMarked={changedMarked} />)}
-    </div>
-  )
+function PostList() {
+  const postList = useSelector((store) => store.posts)
+  return <div>{postList && postList.map((post) => <Post key={post.id} {...post} />)}</div>
 }
 
 export default PostList

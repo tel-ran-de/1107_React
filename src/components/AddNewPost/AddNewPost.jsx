@@ -1,16 +1,16 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid'
-import { PostsContext } from '../../contexts'
+import { addPost } from '../../redux/actionCreators'
 
 const AddNewPost = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
+  const dispatch = useDispatch()
 
-  const { handleAddPost } = useContext(PostsContext)
- 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // сформировать объект из 4 полей title, text, id, marked, false
+
     const newPost = {
       title: title,
       text: text,
@@ -18,8 +18,8 @@ const AddNewPost = () => {
       img: 'https://placehold.co/200x200/orange/white',
       marked: false,
     }
-    // вызываем
-    handleAddPost(newPost)
+    // отправляем экшен добавления через dispatch в редьюсер
+    dispatch(addPost(newPost))
     setTitle('')
     setText('')
   }
