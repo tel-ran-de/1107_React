@@ -1,21 +1,12 @@
-import { useState } from 'react'
-import { todos } from '../../utils/todos'
+import { useSelector } from 'react-redux'
 import Todo from '../Todo/Todo'
 
 function TodoList() {
-  const [todoList, setTodoList] = useState(todos)
-
-  const handleChange = (id) => {
-    const newTodos = todoList.map((todo) =>
-      todo.id === id ? { ...todo, doneFlag: !todo.doneFlag } : todo
-    )
-    setTodoList(newTodos)
-  }
-
+  const todoList = useSelector((state) => state.todos)
   return (
     <div>
       {todoList.map((todo) => (
-        <Todo key={todo.id} {...todo} handleChange={handleChange} />
+        <Todo key={todo.id} {...todo} />
       ))}
     </div>
   )

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from './Layout/Header/Header'
-import Counter from './components/Counter/Counter'
 import { ThemeContext } from './contexts'
 
 // Обернуть это все в провайдер
@@ -23,7 +22,6 @@ export const App = () => {
     <>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <Header />
-        <Counter />
         <Outlet />
       </ThemeContext.Provider>
     </>

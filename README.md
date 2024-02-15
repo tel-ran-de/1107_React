@@ -274,3 +274,28 @@ counter: 1,
 }
 
 {...counter, counter: counter.counter+=1 }
+
+store.counter.counter --> 0
+const store = {
+counter: {
+counter: 0,
+},
+todos: [
+{
+id: '1',
+taskTitle: 'Task 1',
+taskDescription: 'Complete project presentation',
+doneFlag: false,
+},
+{
+id: '2',
+taskTitle: 'Task 2',
+taskDescription: 'Buy groceries',
+doneFlag: true,
+},
+],
+}
+
+// payload - нагрузка или какая-то информация
+// ддоп данные кот перадаются в экшене
+// payload - объект(пользователь, продукт, цвет, и тд), строка, число

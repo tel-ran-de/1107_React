@@ -4,7 +4,8 @@ import { decrease, increase, increase_by_value, reset } from '../../redux/action
 const Counter = () => {
   // получаем доступ к нашему store
   // useSelector в качестве параметра принимает КОЛБЕК!!!
-  const counter = useSelector((store) => store.counter)
+  const counter = useSelector((store) => store.counter.counter)
+  console.log(counter)
   const dispatch = useDispatch()
   return (
     <div>
