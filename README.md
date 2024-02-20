@@ -299,3 +299,14 @@ doneFlag: true,
 // payload - нагрузка или какая-то информация
 // ддоп данные кот перадаются в экшене
 // payload - объект(пользователь, продукт, цвет, и тд), строка, число
+
+1. создаем файл colorSlice.js
+2. import createSlice
+3. создать initialState {color: #ffffff}
+4. создать colorSlice --> createSlice
+5. реализовать action ChangeColor который будет изменять цвет на рандомный
+6. второй action resetColor сбрасывает на дефолтный #ffffff
+
+10) экспортировать actions
+11) экспортировать reducer
+12) добавить слайс в редьюсер

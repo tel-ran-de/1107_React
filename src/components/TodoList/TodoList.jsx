@@ -6,7 +6,7 @@ import Todo from '../Todo/Todo'
 function TodoList() {
   const [taskTitle, setTaskTitle] = useState('')
   const [taskDescription, setTaskDescription] = useState('')
-  const todoList = useSelector((state) => state.todos)
+  const todoList = useSelector((state) => state.todos.todos)
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {

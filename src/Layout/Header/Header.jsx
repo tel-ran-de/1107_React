@@ -1,11 +1,13 @@
 import { useContext } from 'react'
+import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { ThemeContext } from '../../contexts'
+import { changeRandomColor, resetColor } from '../../store/colorSlice'
 import classes from './Header.module.css'
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
-  console.log(theme)
+  const dispatch = useDispatch()
   return (
     <header
       // className={theme === 'dark' ? classes.dark : ''}
@@ -23,6 +25,9 @@ const Header = () => {
       >
         Change Theme
       </button>
+      <button onClick={() => dispatch(changeRandomColor())}>Change Color</button>
+      <button onClick={() => dispatch(resetColor())}>Reset Color</button>
+
       <nav>
         <ul>
           <li>
