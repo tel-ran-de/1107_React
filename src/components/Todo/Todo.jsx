@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { deleteTodo, toggleTodo } from '../../redux/actionCreators'
+import { deleteTodo, toggleTodo } from '../../store/todoSlice'
 
 const Todo = ({ taskTitle, taskDescription, doneFlag, id }) => {
   const dispatch = useDispatch()

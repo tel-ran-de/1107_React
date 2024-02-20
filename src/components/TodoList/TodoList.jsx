@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTodo } from '../../redux/actionCreators'
+import { addTodo } from '../../store/todoSlice'
 import Todo from '../Todo/Todo'
 
 function TodoList() {
