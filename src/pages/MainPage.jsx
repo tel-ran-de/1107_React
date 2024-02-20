@@ -1,9 +1,9 @@
-import TodoList from '../components/TodoList/TodoList'
+import Counter from '../components/Counter/Counter'
 
 const MainPage = () => {
   return (
     <main>
-      <TodoList />
+      <Counter />
     </main>
   )
 }

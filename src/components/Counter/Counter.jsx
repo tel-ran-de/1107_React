@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { decrease, increase, increase_by_value, reset } from '../../redux/actionCreators'
+import { decrease, increase, reset } from '../../store/counterSlice'
 
 const Counter = () => {
   // получаем доступ к нашему store
@@ -13,7 +13,6 @@ const Counter = () => {
       <button onClick={() => dispatch(increase())}>+</button>
       <button onClick={() => dispatch(decrease())}>-</button>
       <button onClick={() => dispatch(reset())}>reset</button>
-      <button onClick={() => dispatch(increase_by_value(5))}>Add 5</button>
     </div>
   )
 }

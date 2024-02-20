@@ -9,7 +9,7 @@ import MainPage from './pages/MainPage'
 import PostsPage from './pages/PostsPage'
 import SingleUserPage from './pages/SingleUserPage'
 import UsersPage from './pages/UsersPage'
-import { store } from './redux/store'
+import { store } from './store/store'
 // RouterProvider - специальный компонент,
 //  кот оборачивает наше приложение и обеспеч доступ к созданному router
 
