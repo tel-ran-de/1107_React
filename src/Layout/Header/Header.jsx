@@ -1,13 +1,14 @@
-import { useContext } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { ThemeContext } from '../../contexts'
 import { changeRandomColor, resetColor } from '../../store/colorSlice'
+import { toggleTheme } from '../../store/themeSlice'
 import classes from './Header.module.css'
 
 const Header = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext)
+  // const { theme, toggleTheme } = useContext(ThemeContext)
   const dispatch = useDispatch()
+  const theme = useSelector((state) => state.theme.theme)
+  // импортировать theme из стора через useSelector
   return (
     <header
       // className={theme === 'dark' ? classes.dark : ''}
@@ -17,7 +18,8 @@ const Header = () => {
       }}
     >
       <button
-        onClick={toggleTheme}
+        // диспатчим экшен
+        onClick={() => dispatch(toggleTheme())}
         style={{
           color: theme === 'dark' ? '#ffffff' : '#000000',
           background: theme === 'dark' ? '#363232' : '#ffffff',

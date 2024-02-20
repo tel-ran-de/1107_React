@@ -310,3 +310,9 @@ doneFlag: true,
 10) экспортировать actions
 11) экспортировать reducer
 12) добавить слайс в редьюсер
+
+// THEME SLICE
+
+3. создать initialState "light" (строка)
+4. создать slice
+5. добавить в slice имя, состояние, reducers
