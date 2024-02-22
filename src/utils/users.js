@@ -1,0 +1,51 @@
+export const users = [
+  {
+    id: 1,
+    name: 'John Doe',
+    address: '123 Main Street',
+    age: 30,
+    profession: 'Software Engineer',
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    address: '456 Elm Street',
+    age: 25,
+    profession: 'Graphic Designer',
+  },
+  {
+    id: 3,
+    name: 'Alice Johnson',
+    address: '789 Oak Street',
+    age: 35,
+    profession: 'Teacher',
+  },
+  {
+    id: 4,
+    name: 'Michael Brown',
+    address: '101 Pine Street',
+    age: 40,
+    profession: 'Doctor',
+  },
+  {
+    id: 5,
+    name: 'Emily Davis',
+    address: '555 Cedar Avenue',
+    age: 28,
+    profession: 'Marketing Manager',
+  },
+  {
+    id: 6,
+    name: 'Robert Wilson',
+    address: '888 Maple Road',
+    age: 33,
+    profession: 'Accountant',
+  },
+  {
+    id: 7,
+    name: 'Sophia Martinez',
+    address: '222 Birch Lane',
+    age: 22,
+    profession: 'Student',
+  },
+]

@@ -1,9 +1,9 @@
-import TodoList from '../components/TodoList/TodoList'
+import ProductList from '../components/ProductList/ProductList'
 
 const MainPage = () => {
   return (
     <main>
-      <TodoList />
+      <ProductList />
     </main>
   )
 }

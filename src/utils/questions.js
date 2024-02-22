@@ -1,4 +1,4 @@
-const questions = [
+export const questions = [
   {
     id: 1,
     question: 'What is the capital of Japan?',
@@ -59,4 +59,4 @@ const questions = [
     options: ['Atlantic Ocean', 'Indian Ocean', 'Southern Ocean', 'Pacific Ocean'],
     correctAnswer: 'Pacific Ocean',
   },
-];
+]
