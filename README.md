@@ -350,3 +350,5 @@ await fetch(baseUrl+ queryUrl)
     }
 
 }
+
+до RTK query
