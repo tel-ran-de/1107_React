@@ -3,6 +3,7 @@ import { maxPriceChange, minPriceChange, sortedChange } from '../../store/filter
 
 export const FiltrationBar = () => {
   const dispatch = useDispatch()
+
   return (
     <form>
       <label htmlFor="minPrice">

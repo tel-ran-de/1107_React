@@ -6,6 +6,7 @@ import { App } from './App'
 import './index.css'
 import MainPage from './pages/MainPage'
 import PostsPage from './pages/PostsPage'
+import ProductsPage from './pages/ProductsPage'
 import SingleUserPage from './pages/SingleUserPage'
 import UsersPage from './pages/UsersPage'
 import { store } from './store/store'
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MainPage />,
+      },
+      {
+        path: '/products',
+        element: <ProductsPage />,
       },
       {
         path: '/users',
