@@ -1,6 +1,8 @@
+import classes from './ProductCard.module.css'
+
 const ProductCard = ({ title, description, price, images }) => {
   return (
-    <div>
+    <div className={classes.productContainer}>
       <h1>{title}</h1>
       <p>{description}</p>
       <p>{price}</p>
