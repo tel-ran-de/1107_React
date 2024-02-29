@@ -1,12 +1,12 @@
 import classes from './ProductCard.module.css'
 
-const ProductCard = ({ title, description, price, images }) => {
+const ProductCard = ({ title, description, price, handleAddToCart }) => {
   return (
     <div className={classes.productContainer}>
       <h1>{title}</h1>
       <p>{description}</p>
       <p>{price}</p>
-      <img src={images && images[0]} alt={title} />
+      <button onClick={handleAddToCart}>Добавить в корзину</button>
     </div>
   )
 }

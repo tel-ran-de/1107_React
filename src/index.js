@@ -4,9 +4,11 @@ import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { App } from './App'
 import './index.css'
+import CartPage from './pages/CartPage'
 import MainPage from './pages/MainPage'
 import PostsPage from './pages/PostsPage'
 import ProductsPage from './pages/ProductsPage'
+import SingleProductPage from './pages/SingleProductPage'
 import SingleUserPage from './pages/SingleUserPage'
 import UsersPage from './pages/UsersPage'
 import { store } from './store/store'
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
         element: <ProductsPage />,
       },
       {
+        path: '/products/:id',
+        element: <SingleProductPage />,
+      },
+      {
         path: '/users',
         element: <UsersPage />,
       },
@@ -38,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/posts',
         element: <PostsPage />,
+      },
+      {
+        path: '/cart',
+        element: <CartPage />,
       },
     ],
   },

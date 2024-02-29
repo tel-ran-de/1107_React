@@ -8,7 +8,8 @@ const Header = () => {
   // const { theme, toggleTheme } = useContext(ThemeContext)
   const dispatch = useDispatch()
   const theme = useSelector((state) => state.theme.theme)
-  // импортировать theme из стора через useSelector
+  const { totalSum } = useSelector((state) => state.cart)
+  const { products } = useSelector((state) => state.cart)
   return (
     <header
       // className={theme === 'dark' ? classes.dark : ''}
@@ -17,6 +18,9 @@ const Header = () => {
         background: theme === 'dark' ? '#3c3a3a' : '#ffffff',
       }}
     >
+      <h1>
+        СУММА: {totalSum} Товары в корзине: {products.length}
+      </h1>
       <button
         // диспатчим экшен
         onClick={() => dispatch(toggleTheme())}
@@ -73,6 +77,16 @@ const Header = () => {
               }
             >
               Users
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/cart"
+              className={({ isActive, isPending }) =>
+                isPending ? 'pending' : isActive ? classes.active : ''
+              }
+            >
+              Cart
             </NavLink>
           </li>
         </ul>
