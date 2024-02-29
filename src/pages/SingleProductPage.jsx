@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard/ProductCard'
 import { useGetSingleProductQuery } from '../store/apiSlice'
-import { addProduct } from '../store/cartSlice'
+import { addProduct, countTotalSum } from '../store/cartSlice'
 
 const SingleProductPage = () => {
   const { id } = useParams()
@@ -11,6 +11,7 @@ const SingleProductPage = () => {
 
   const handleAddToCart = (data) => {
     dispatch(addProduct(data))
+    dispatch(countTotalSum())
   }
 
   return (

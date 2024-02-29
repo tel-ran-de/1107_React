@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
 import { App } from './App'
 import './index.css'
 import CartPage from './pages/CartPage'
@@ -11,7 +12,7 @@ import ProductsPage from './pages/ProductsPage'
 import SingleProductPage from './pages/SingleProductPage'
 import SingleUserPage from './pages/SingleUserPage'
 import UsersPage from './pages/UsersPage'
-import { store } from './store/store'
+import { persistor, store } from './store/store'
 // RouterProvider - специальный компонент,
 //  кот оборачивает наше приложение и обеспеч доступ к созданному router
 
@@ -59,7 +60,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 )
